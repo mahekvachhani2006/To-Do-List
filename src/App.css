@@ -1,0 +1,140 @@
+.nav-light {
+  background-color: rgb(246, 227, 227);
+  color: rgb(40, 35, 35);
+}
+.nav-dark {
+  background-color: rgb(21, 20, 20);
+  color: rgb(230, 219, 219);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 0%;
+}
+.Home-light {
+  background-color: rgb(246, 227, 227);
+  color: rgb(40, 35, 35);
+}
+.Home-dark {
+  background-color: rgb(21, 20, 20);
+  color: rgb(230, 219, 219);
+}
+.box {
+  background-color: rgb(232, 232, 122);
+  color: black;
+  padding: 10%;
+}
+.icons {
+  padding: 30% 0% 0% 30%;
+  display: flex;
+  justify-content: space-around;
+}
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10%;
+  /* margin: 5%; */
+}
+.page-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+}
+.toDo-dark {
+  background-color: rgb(45, 44, 44);
+  color: white;
+  padding-top: 30px;
+}
+.toDo-light {
+  background-color: rgb(233, 231, 231);
+  color: rgb(16, 16, 16);
+  padding-top: 30px;
+}
+.allToDo-dark {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(12, 12, 12);
+  color: rgb(228, 221, 221);
+  padding: 15px 20px;
+  width: 75%;
+  margin: 5px auto 5px auto;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.allToDo-light {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(252, 247, 247);
+  color: rgb(40, 35, 35);
+  padding: 15px 20px;
+  width: 75%;
+  margin: 5px auto 5px auto;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.button {
+  color: azure;
+  padding: 6px;
+  border: none;
+  border-radius: 10px;
+}
+.page-title-line {
+  width: 75%;
+  height: 3px;
+  background-color: #ffde17;
+  margin: auto;
+  border-radius: 10px;
+}
+.aboutToDo-dark {
+  background-color: rgb(45, 44, 44);
+  color: white;
+  width: 75%;
+  margin: auto;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 30%;
+}
+.aboutToDo-light {
+  background-color: rgb(233, 231, 231);
+  color: rgb(16, 16, 16);
+  width: 75%;
+  margin: auto;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 30%;
+}
+.aboutToDo-dark p {
+  padding: 10px 0% 10px 0%;
+  line-height: 20px;
+}
+.aboutToDo-light p {
+  padding: 10px 0% 10px 0%;
+  line-height: 20px;
+}
+.btn-logout{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logout-button{
+
+  padding: 12px;
+  background: #d8093a;
+  color: white;
+  font-size: 18px;
+  border: solid;
+  border-radius: 10px;
+  cursor: pointer;
+  border-color: #d8093a;
+}
+.logout-button:hover {
+  background: #322b2d;
+  border-color: red;
+  color:red;
+}
