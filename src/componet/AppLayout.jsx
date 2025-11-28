@@ -7,6 +7,8 @@ import ToDoDetail from "./ToDoDetail";
 import { Layout } from "./Layout";
 import { Login } from "./Login";
 import PrivateRouter from "./PrivateRouter";
+import { Otp } from "./Otp";
+import { Dashboard } from "./Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -16,32 +18,16 @@ export const router = createBrowserRouter([
         <Layout />
       </PrivateRouter>
     ),
-
     children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "alltodo",
-        element: <AllToDo />,
-      },
-      {
-        path: "tododetail/:id",
-        element: <ToDoDetail />,
-      },
+      { path: "/", element: <Home /> },
+      { path: "about", element: <About /> },
+      { path: "alltodo", element: <AllToDo /> },
+      { path: "tododetail/:id", element: <ToDoDetail /> },
+      { path: "dashboard", element: <Dashboard /> },
     ],
   },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
+
+  { path: "/login", element: <Login /> },
+  { path: "/register", element: <Register /> },
+  { path: "/otp", element: <Otp /> },
 ]);

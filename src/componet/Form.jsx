@@ -1,39 +1,32 @@
-import React, { useContext, useEffect, useState } from "react";
-import ModeContext from "../context/Mode_context";
+import { useState } from "react";
 
-export const Form = ({ getFormData, formData, editId }) => {
-  const [title, setTitle] = useState("");
+const Form = ({ getFormData, formData, editId }) => {
+  const [value, setValue] = useState(formData.title);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (title.trim().length === 0) return;
-
-    // send only correct structure → { title: "something" }
-    getFormData({ title });
-
-    setTitle("");
+    getFormData({ title: value });
+    setValue("");
   };
 
-  useEffect(() => {
-    if (editId !== null && formData?.title) {
-      setTitle(formData.title);
-    }
-  }, [editId, formData]);
-
-  const { isDarkMode } = useContext(ModeContext);
+  useState(() => {
+    setValue(formData.title);
+  }, [formData]);
 
   return (
-    <div className={`${!isDarkMode ? "nav-dark" : "nav-light"}`}>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter Title..."
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <button type="submit">{editId !== null ? "Update" : "Add"}</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="form-wrapper">
+      <input
+        type="text"
+        placeholder="Enter a task..."
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+
+      <button type="submit">
+        {editId ? "Update" : "Add"}
+      </button>
+    </form>
   );
 };
+
+export default Form;   

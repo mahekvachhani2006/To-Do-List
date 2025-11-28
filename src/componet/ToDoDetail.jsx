@@ -6,12 +6,11 @@ export default function ToDoDetail() {
   const allToDoData = JSON.parse(localStorage.getItem("data"));
   const currentTask = allToDoData.filter((item) => {
     console.log(item);
-    
   });
   // useEffect(()=>{
   //   console.log(currentTask);
   //   console.log(allToDoData);
-    
+
   // },[]);
   console.log(currentTask);
   return (

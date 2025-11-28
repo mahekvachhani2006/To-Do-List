@@ -1,7 +1,7 @@
 import "./Home.css";
 import ModeContext from "../context/Mode_context";
 import { useContext, useEffect, useState } from "react";
-import { Form } from "./Form";
+import Form from "./Form";       
 import Box from "./Box";
 
 const getLocalTasks = () => {
@@ -54,18 +54,22 @@ export const Home = () => {
   };
 
   return (
-    <div className={`${!isDarkMode ? "nav-dark" : "nav-light"}`}>
-      <Form
-        getFormData={getFormData}
-        formData={formData}
-        editId={editId}
-      />
+    <div className={`${!isDarkMode ? "toDo-dark" : "toDo-light"}`}>
+      <div className={`${!isDarkMode ? "homeToDo-dark" : "homeToDo-light"}`}>
+        <div className="page-title">My Todos</div>
 
-      <Box
-        taskList={allData}
-        editHandler={editHandler}
-        deleteHandler={deleteHandler}
-      />
+        <Form 
+          getFormData={getFormData} 
+          formData={formData} 
+          editId={editId} 
+        />
+
+        <Box
+          taskList={allData}
+          editHandler={editHandler}
+          deleteHandler={deleteHandler}
+        />
+      </div>
     </div>
   );
 };

@@ -9,7 +9,7 @@ function Box({ editHandler, taskList, deleteHandler }) {
 
   return (
     <>
-      <div className="main">
+      <div className="main" style={{paddingBottom:"10%"}}>
         {taskList.length === 0 ? (
           <h2>No Tasks Added</h2>
         ) : (

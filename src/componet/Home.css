@@ -1,9 +1,39 @@
-.register{
-    /* background-color: rgb(5, 5, 5); */
-    width:50%;
-    margin: auto;
-    /* padding: 2% 20%;
-    color:white;
-    margin: 5% 20%; */
-    border-radius: 10%;
+.toDo-dark {
+  background-color: rgb(45, 44, 44);
+  color: white;
+  padding-top: 30px;
+}
+.toDo-light {
+  background-color: rgb(233, 231, 231);
+  color: rgb(16, 16, 16);
+  padding-top: 30px;
+}
+.todo-form {
+  margin: 25px auto auto;
+  position: relative;
+  width: 80%;
+}
+.page-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+}
+.homeToDo-dark {
+  width: 90%;
+  margin: auto;
+  background-color: rgb(12, 12, 12);
+  color: rgb(228, 221, 221);
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px;
+}
+.homeToDo-light {
+  width: 90%;
+  margin: 2% auto;
+  background-color: rgb(252, 247, 247);
+  color: rgb(40, 35, 35);
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 400;
 }

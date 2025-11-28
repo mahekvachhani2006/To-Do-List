@@ -47,11 +47,8 @@ export const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!validate()) return;
-
     const savedUser = JSON.parse(localStorage.getItem("registerData"));
-
     if (!savedUser) {
       toast.error("No user found! Please register first.");
       return;
@@ -61,10 +58,9 @@ export const Login = () => {
       savedUser.email === formData.email &&
       savedUser.password === formData.password
     ) {
-      localStorage.setItem("user", JSON.stringify(savedUser));
-      toast.success("Login successful!");
-
-      setTimeout(() => navigate("/"), 1500);
+      const otp = Math.floor(100000 + Math.random() * 900000);
+      localStorage.setItem("loginOtp", otp);
+      navigate("/otp");
     } else {
       toast.error("Invalid email or password!");
     }

@@ -117,13 +117,12 @@ nav {
   padding: 10px 0% 10px 0%;
   line-height: 20px;
 }
-.btn-logout{
+.btn-logout {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.logout-button{
-
+.logout-button {
   padding: 12px;
   background: #d8093a;
   color: white;
@@ -136,5 +135,5 @@ nav {
 .logout-button:hover {
   background: #322b2d;
   border-color: red;
-  color:red;
+  color: red;
 }
