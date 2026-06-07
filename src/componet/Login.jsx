@@ -62,8 +62,14 @@ export const Login = () => {
       savedUser.password === formData.password
     ) {
       const otp = Math.floor(100000 + Math.random() * 900000);
-      localStorage.setItem("loginOtp", otp);
-      navigate("/otp");
+
+toast.success(`Your OTP is ${otp}`);
+
+navigate("/otp", {
+  state: {
+    otp: otp.toString(),
+  },
+});
     } else {
       toast.error("Invalid email or password!");
     }

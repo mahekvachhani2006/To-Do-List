@@ -15,7 +15,7 @@ createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ModeContextProvider>
       <RouterProvider router={router} />
-       <ToastContainer position="top-center" autoClose={2000} />
+       <ToastContainer position="top-center" autoClose={12000} />
     </ModeContextProvider>
   </React.StrictMode>
   // </StrictMode>,

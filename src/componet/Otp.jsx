@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export const Otp = () => {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const storedOtp = location.state?.otp;
 
   const handleChange = (value, index) => {
     if (isNaN(value)) return;
@@ -16,12 +19,11 @@ export const Otp = () => {
 
   const verifyOtp = () => {
     const enteredOtp = otp.join("");
-    const storedOtp = localStorage.getItem("loginOtp");
 
     if (enteredOtp === storedOtp) {
       toast.success("OTP Verified Successfully!");
 
-localStorage.setItem("user", JSON.stringify(true));      localStorage.removeItem("tempLogin");
+      localStorage.setItem("user", JSON.stringify(true));
 
       navigate("/");
     } else {
@@ -32,6 +34,10 @@ localStorage.setItem("user", JSON.stringify(true));      localStorage.removeItem
   return (
     <div className="otp-container">
       <h2>Enter OTP</h2>
+
+      <p>
+        Demo OTP: <strong>{storedOtp}</strong>
+      </p>
 
       <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
         {otp.map((digit, index) => (
