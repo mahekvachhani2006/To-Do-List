@@ -5,34 +5,34 @@ import "./App.css";
 import { Home } from "./componet/Home";
 
 function App() {
-  // const [count, setCount] = useState(0);
-  // const [btnClick, setBtnClick] = useState(0);
+  const [count, setCount] = useState(0);
+  const [btnClick, setBtnClick] = useState(0);
 
-  // useEffect(() => {
-  //   console.log("hello");
-  // }, [count]);
+  useEffect(() => {
+    console.log("hello");
+  }, [count]);
 
-  // useEffect(() => {
-  //   const userData = {
-  //     firstName: "bansi",
-  //     lastName: "chudasama",
-  //     city: "xyz",
-  //   };
+  useEffect(() => {
+    const userData = {
+      firstName: "mahek",
+      lastName: "vachhani",
+      city: "xyz",
+    };
 
-  //   localStorage.setItem("useData", JSON.stringify(userData));
-  //   localStorage.setItem("Token", "hello");
-  //   localStorage.setItem("count", count);
-  // });
+    localStorage.setItem("useData", JSON.stringify(userData));
+    localStorage.setItem("Token", "hello");
+    localStorage.setItem("count", count);
+  });
 
-  // useEffect(() => {
-  //   if (btnClick) {
-  //     localStorage.getItem("userData");
-  //     localStorage.getItem("Token");
-  //   }
-  // },[btnClick])
+  useEffect(() => {
+    if (btnClick) {
+      localStorage.getItem("userData");
+      localStorage.getItem("Token");
+    }
+  },[btnClick])
   return (
     <>
-      {/* <div>
+      <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -54,7 +54,7 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p> */}
+      </p>
      
     </>
   );

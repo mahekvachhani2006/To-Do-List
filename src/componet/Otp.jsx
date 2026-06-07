@@ -21,8 +21,7 @@ export const Otp = () => {
     if (enteredOtp === storedOtp) {
       toast.success("OTP Verified Successfully!");
 
-      localStorage.setItem("user", true);
-      localStorage.removeItem("tempLogin");
+localStorage.setItem("user", JSON.stringify(true));      localStorage.removeItem("tempLogin");
 
       navigate("/");
     } else {

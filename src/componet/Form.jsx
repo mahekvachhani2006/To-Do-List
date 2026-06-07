@@ -9,6 +9,7 @@ const Form = ({ getFormData, formData, editId }) => {
     setValue("");
   };
 
+  // Update local input when editing starts
   useState(() => {
     setValue(formData.title);
   }, [formData]);
@@ -29,4 +30,4 @@ const Form = ({ getFormData, formData, editId }) => {
   );
 };
 
-export default Form;   
+export default Form;   // ✅ IMPORTANT

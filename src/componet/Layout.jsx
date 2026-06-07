@@ -14,7 +14,7 @@ export const Layout = () => {
   //     setIsDarkMode(!isDarkMode);
   //   };
 
-  const { isDarkMode, handleDarkMode } = useContext(ModeContext); 
+  const { isDarkMode, handleDarkMode } = useContext(ModeContext); // used to reduce props drilling
   const handleLogout = () => {
     localStorage.removeItem("user");
     toast.success("Logout SuccesFully!!");

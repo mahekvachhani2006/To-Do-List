@@ -47,8 +47,11 @@ export const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!validate()) return;
+
     const savedUser = JSON.parse(localStorage.getItem("registerData"));
+
     if (!savedUser) {
       toast.error("No user found! Please register first.");
       return;
@@ -96,6 +99,20 @@ export const Login = () => {
           <button type="submit" className="btn">
             Login
           </button>
+
+          <p style={{ marginTop: "15px", textAlign: "center" }}>
+            Don't have an account?{" "}
+            <span
+              onClick={() => navigate("/register")}
+              style={{
+                color: "blue",
+                cursor: "pointer",
+                fontWeight: "bold",
+              }}
+            >
+              Register Here
+            </span>
+          </p>
         </form>
       </div>
     </div>

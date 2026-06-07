@@ -37,3 +37,8 @@
   font-size: 20px;
   font-weight: 400;
 }
+.spinners {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}

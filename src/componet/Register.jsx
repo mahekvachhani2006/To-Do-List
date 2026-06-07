@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import ModeContext from "../context/Mode_context";
 import { useContext } from "react";
@@ -11,14 +11,14 @@ export const Register = () => {
   const navigate = useNavigate();
 
   // -------------------------- OLD STATE (COMMENTED) --------------------------
-  // const [formData, setFormData] = useState({
-  //   userName: "",
-  //   email: "",
-  //   password: "",
-  //   conPassword: "",
-  // });
+  const [formData, setFormData] = useState({
+    userName: "",
+    email: "",
+    password: "",
+    conPassword: "",
+  });
 
-  // const [error, setError] = useState({});
+  const [error, setError] = useState({});
   // --------------------------------------------------------------------------
 
   const { isDarkMode } = useContext(ModeContext);
@@ -94,18 +94,18 @@ export const Register = () => {
 
   // ------------------------------ FORMIK -------------------------------------
   const formik = useFormik({
-    initialValues: {
-      userName: "",
-      email: "",
-      password: "",
-      conPassword: "",
-    },
-    validationSchema: signupSchema,
-    onSubmit: (values) => {
-      localStorage.setItem("registerData", JSON.stringify(values));
-      navigate("/");
-    },
-  });
+  initialValues: {
+    userName: "",
+    email: "",
+    password: "",
+    conPassword: "",
+  },
+  validationSchema: signupSchema,
+  onSubmit: (values) => {
+    localStorage.setItem("registerData", JSON.stringify(values));
+    navigate("/login");
+  },
+});
   // ---------------------------------------------------------------------------
 
   return (
@@ -148,8 +148,7 @@ export const Register = () => {
             onBlur={formik.handleBlur}
             value={formik.values.email}
           />
-          {/* OLD error */}
-          {/* {error.email && <p className="error">{error.email}</p>} */}
+          
           
           {formik.touched.email && formik.errors.email && (
             <p className="error">{formik.errors.email}</p>
@@ -166,8 +165,7 @@ export const Register = () => {
             onBlur={formik.handleBlur}
             value={formik.values.password}
           />
-          {/* OLD error */}
-          {/* {error.password && <p className="error">{error.password}</p>} */}
+          
 
           {formik.touched.password && formik.errors.password && (
             <p className="error">{formik.errors.password}</p>
